@@ -27,7 +27,7 @@
 
         nav img {
             height: 55px;
-            transform: scale(1.45);      /* Bigger logo */
+            transform: scale(1.45);
             transform-origin: left center;
         }
 
@@ -45,22 +45,42 @@
 
         /* Hero Section */
         .hero {
-            background-color: #DFF2E1;
+            position: relative;
+            overflow: hidden;
             text-align: center;
             padding: 120px 20px;
+        }
+
+        /* BLUR BACKGROUND IMAGE */
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: inherit;
+            background-size: cover;
+            background-position: center;
+            filter: blur(6px);
+            transform: scale(1.1);
+            z-index: -1;
         }
 
         .hero h1 {
             font-size: 46px;
             margin-bottom: 15px;
-            color: #355E3B;
+            color: white;
+            text-shadow: 1px 1px 4px black;
+            position: relative;
+            z-index: 2;
         }
 
         .hero p {
             font-size: 18px;
             max-width: 650px;
             margin: auto;
-            color: #333;
+            color: white;
+            text-shadow: 1px 1px 4px black;
+            position: relative;
+            z-index: 2;
         }
 
         .btn {
@@ -73,6 +93,8 @@
             text-decoration: none;
             font-weight: 600;
             transition: 0.3s;
+            position: relative;
+            z-index: 2;
         }
 
         .btn:hover {
@@ -123,9 +145,13 @@
     </nav>
 
     <!-- Hero -->
-    <section class="hero" id="home" style="background-image: url('home.jpg'); background-size: cover; background-position: center; color: white; text-shadow: 1px 1px 4px black;">
+    <section 
+        class="hero" 
+        id="home" 
+        style="background-image: url('home.jpg'); background-size: cover; background-position: center;">
+        
         <h1>Explore the World with IB Explorers</h1>
-        <p>Discover the beauty of Northern Pakistan – from towering mountains to tranquil lakes. Embark on curated adventures that create lasting memories. With IB Explorers, every journey is seamless, thrilling, and truly unforgettable.</p>
+        <p>Discover the beauty of Northern Pakistan – from towering mountains to tranquil lakes. Embark on curated adventures that create lasting memories.</p>
         <a href="#tours" class="btn">View Tours</a>
     </section>
 
@@ -135,3 +161,27 @@
 
         <div class="card">
             <h3>Northern Pakistan Tour</h3>
+            <p>Experience the stunning mountains, lakes, and valleys with our exclusive northern tour packages.</p>
+        </div>
+
+        <div class="card">
+            <h3>International Trips</h3>
+            <p>Plan your dream vacation with our international tour services at affordable rates.</p>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+        <h2>Contact Us</h2>
+        <div class="card">
+            <p>Email: ibexplorers@gmail.com</p>
+            <p>Phone: +92 XXX XXX XXXX</p>
+        </div>
+    </section>
+
+    <footer>
+        © 2025 IB Explorers – All Rights Reserved
+    </footer>
+
+</body>
+</html>
